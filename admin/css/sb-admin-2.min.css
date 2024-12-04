@@ -10066,15 +10066,32 @@ form.user .btn-user {
   border-radius: 5px 5px 0px 0px;
   color: #fff;
 }
+/* Button custom styles */
 .btn-custom {
   background-color: #007bff;
   color: white;
-  width: 20%;
+  width: auto; /* Set default width to auto */
 }
+
 .btn-custom:hover {
   background-color: #0056b3;
   color: #fff;
 }
+
+/* Responsive adjustment for mobile */
+@media (max-width: 768px) {
+  .btn-custom {
+    width: 50%; /* Make the button full width on mobile */
+  }
+}
+
+/* For larger screens, if you still want a specific width (like 20%) */
+@media (min-width: 769px) {
+  .btn-custom {
+    width: 20%; /* Button takes 20% width on larger screens */
+  }
+}
+
 
 .custom-file {
   position: relative;

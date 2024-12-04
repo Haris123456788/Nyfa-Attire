@@ -27,7 +27,7 @@ $carousel_query = "SELECT * FROM carousel";
 $carousel_result = $conn->query($carousel_query);
 ?>
 
-<header id="header" class="carousel slide" data-bs-ride="carousel" style="padding-top: 104px;">
+<header id="header" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <?php
         if ($carousel_result->num_rows > 0):
@@ -36,12 +36,12 @@ $carousel_result = $conn->query($carousel_query);
         ?>
         <!-- Dynamic Carousel Item -->
         <div class="carousel-item <?php echo $isActive ? 'active' : ''; ?>" 
-             style="background-image: url('images/<?php echo $row['image']; ?>'); 
-                    background-size: cover; 
-                    background-position: center; 
-                    width: 100%; 
-                    height: 100vh;">
-            <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white">
+     style="background-image: url('images/<?php echo $row['image']; ?>'); 
+            background-size: cover; 
+            background-position: center; 
+            height: 100vh;">
+
+<div class="container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white">
                 <h2 class="text-capitalize"><?php echo $row['title']; ?></h2>
                 <h1 class="text-uppercase py-2 fw-bold"><?php echo $row['subtitle']; ?></h1>
                 <a href="#" class="btn mt-3 text-uppercase"><?php echo $row['button_text']; ?></a>
@@ -281,7 +281,26 @@ $on_sale_result = $conn->query($on_sale_query);
     <!-- footer -->
     <?php include("footer.php");  ?>
     <!-- end of footer -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector(".navbar");
+    const header = document.querySelector("#header");
 
+    if (navbar && header) {
+        // Get the navbar height
+        const navbarHeight = navbar.offsetHeight;
+
+        // Set the margin dynamically
+        header.style.marginTop = `${navbarHeight}px`;
+
+        // Adjust for mobile screens
+        if (window.innerWidth <= 768) {
+            header.style.marginTop = `${navbarHeight}px`;
+        }
+    }
+});
+
+</script>
 <!-- Include jQuery -->
 <script src="js/jquery-3.6.0.js"></script>
   <!-- Include SweetAlert -->

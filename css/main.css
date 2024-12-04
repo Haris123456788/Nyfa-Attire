@@ -55,6 +55,16 @@ body{
 /* #header{
     background: url(../images/banner-img-1.jpg) top/cover no-repeat;
 } */
+@media (max-width: 768px) {
+    #header {
+        margin-top: 0; /* Reset margin for mobile */
+    }
+
+    .carousel-item {
+        height: calc(100vh - 56px); /* Subtract navbar height dynamically */
+    }
+}
+
 .carousel-inner h1{
     font-size: 60px;
     font-family: var(--lg-font);

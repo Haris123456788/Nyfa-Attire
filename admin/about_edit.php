@@ -18,7 +18,7 @@ $row = mysqli_fetch_array($query);
 // Check if the data exists
 if (!$row) {
     // Redirect if no data is found for the given ID
-    header('Location: collection.php');
+    header('Location: index.php');
     exit();
 }
 

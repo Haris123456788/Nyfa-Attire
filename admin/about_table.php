@@ -95,8 +95,8 @@ include('includes/sidebar.php');
                 <div class="container-fluid">
                 <!-- Page Heading -->
                      
-                    <h1 class="h3 mb-2 text-gray-800">Collection Table</h1>
-                    <p class="mb-4">Collection Data Tables where you can  &nbsp;<span class=" font-weight-bold text-primary">Edit</span> , <span class=" font-weight-bold text-primary">Upadte</span> , <span class=" font-weight-bold text-danger">Delete</span> &nbsp; your data.
+                    <h1 class="h3 mb-2 text-gray-800">About Table</h1>
+                    <p class="mb-4">About Data Tables where you can  &nbsp;<span class=" font-weight-bold text-primary">Edit</span> , <span class=" font-weight-bold text-primary">Upadte</span> , <span class=" font-weight-bold text-danger">Delete</span> &nbsp; your data.
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">

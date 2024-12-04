@@ -2,7 +2,7 @@
 include('db.php');
 session_start(); // Start the session at the top
 
-$query = "SELECT * FROM `about` ";
+$query = "SELECT * FROM `offer` ";
 $result = mysqli_query($conn, $query); 
 include('includes/header.php');
 include('includes/sidebar.php');
@@ -95,12 +95,12 @@ include('includes/sidebar.php');
                 <div class="container-fluid">
                 <!-- Page Heading -->
                      
-                    <h1 class="h3 mb-2 text-gray-800">Collection Table</h1>
-                    <p class="mb-4">Collection Data Tables where you can  &nbsp;<span class=" font-weight-bold text-primary">Edit</span> , <span class=" font-weight-bold text-primary">Upadte</span> , <span class=" font-weight-bold text-danger">Delete</span> &nbsp; your data.
+                    <h1 class="h3 mb-2 text-gray-800">Offer Table</h1>
+                    <p class="mb-4">Offer Data Tables where you can  &nbsp;<span class=" font-weight-bold text-primary">Edit</span> , <span class=" font-weight-bold text-primary">Upadte</span> , <span class=" font-weight-bold text-danger">Delete</span> &nbsp; your data.
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Slider Table</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Offer Table</h6>
                         </div>
                         <div class="card-body">
                         <div class="table-responsive">
@@ -108,20 +108,21 @@ include('includes/sidebar.php');
         <thead>
             <tr>
                 <th>Sr. No</th>
+                <th>Text</th>
                 <th>Title</th>
-                <th>Sub Title</th>
-                <th>Description</th>
+                <th>Button Text</th>
                 <th>Image</th>
                 <th>Edit</th>
+
 
             </tr>
         </thead>
         <tfoot>
             <tr>
             <th>Sr. No</th>
+                <th>Text</th>
                 <th>Title</th>
-                <th>Sub Title</th>
-                <th>Description</th>
+                <th>Button Text</th>
                 <th>Image</th>
                 <th>Edit</th>
             </tr>
@@ -133,11 +134,11 @@ include('includes/sidebar.php');
             while($data = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
                 echo "<td>" . $sn . "</td>";
+                echo "<td>" . $data['text'] . "</td>";
                 echo "<td>" . $data['title'] . "</td>";
-                echo "<td>" . $data['subtitle'] . "</td>";
-                echo "<td>" . $data['description'] . "</td>";
+                echo "<td>" . $data['button_text'] . "</td>";
                 echo "<td>" . $data['image'] . "</td>";
-                echo "<td><a href='about_edit.php?id=" . $data['id'] . "'><button type='submit' name='submit' class='btn btn-primary'>Edit</button></a></td>";
+                echo "<td><a href='offer_edit.php?id=" . $data['id'] . "'><button type='submit' name='submit' class='btn btn-primary'>Edit</button></a></td>";
                 $sn++;
             }
         } else {
@@ -161,7 +162,7 @@ include('includes/sidebar.php');
         <!-- End of Content Wrapper -->
 
     <!-- End of Page Wrapper -->
-
+    
 
     <?php
 include('includes/scripts.php');

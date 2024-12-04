@@ -126,6 +126,28 @@
     </div>
 </li>
 
+<!-- Divider -->
+<hr class="sidebar-divider">
+
+<!-- Heading -->
+<div class="sidebar-heading">
+    Offers
+</div>
+<!-- Nav Item - Utilities Collapse Menu -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOffer"
+        aria-expanded="true" aria-controls="collapseOffer">
+        <i class="fas fa-fw fa-wrench"></i>
+        <span>Offers</span>
+    </a>
+    <div id="collapseOffer" class="collapse" aria-labelledby="headingOffer" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Offers:</h6>
+            <a class="collapse-item" href="offer_table.php">Offers Table</a>
+        </div>
+    </div>
+</li>
+
 
 <!-- Divider -->
 <hr class="sidebar-divider">

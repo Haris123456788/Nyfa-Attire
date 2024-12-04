@@ -113,19 +113,41 @@ $carousel_result = $conn->query($carousel_query);
 </section>
 <!-- End of Special Products Section -->
     
-    <!-- blogs -->
-    <section id = "offers" class = "py-5">
-        <div class = "container">
-            <div class = "row d-flex align-items-center justify-content-center text-center justify-content-lg-start text-lg-start">
-                <div class = "offers-content">
-                    <span class = "text-white">Discount Up To 40%</span>
-                    <h2 class = "mt-2 mb-4 text-white">Grand Sale Offer!</h2>
-                    <a href = "#" class = "btn">Buy Now</a>
-                </div>
+<?php
+include('db.php');
+
+// Fetching the offer details from the database
+$offer_query = "SELECT * FROM offer LIMIT 1"; // Adjust the query if needed
+$offer_result = $conn->query($offer_query);
+
+
+
+if ($offer_result->num_rows > 0) {
+    $offer_row = $offer_result->fetch_assoc();
+    $image = $offer_row['image']; // Assuming 'offer_image' is the field storing the image name
+    $text = $offer_row['text']; // Assuming 'discount_text' is the field for discount text
+    $title = $offer_row['title']; // Assuming 'offer_title' is the field for title
+    $button_text = $offer_row['button_text']; // Assuming 'button_text' is the field for button text
+}
+?>
+
+<!-- offers -->
+<section id="offers" class="py-5" 
+    style="background-image: url('images/<?php echo $image; ?>'); 
+           background-size: cover; 
+           background-position: center;">
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center text-center justify-content-lg-start text-lg-start">
+            <div class="offers-content">
+                <span class="text-white"><?php echo $text; ?></span>
+                <h2 class="mt-2 mb-4 text-white"><?php echo $title; ?></h2>
+                <a href="#" class="btn"><?php echo $button_text; ?></a>
             </div>
         </div>
-    </section>
-    <!-- end of blogs -->
+    </div>
+</section>
+<!-- end of offers -->
+
 
    
      <!-- Top rated products -->

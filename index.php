@@ -264,7 +264,7 @@ $on_sale_result = $conn->query($on_sale_query);
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus rem officia accusantium maiores quisquam dolorum?
                 </p>
 
-                <form id="subscribeForm" style="width:45%">
+                <form id="subscribeForm">
     <div class="input-group mb-3 mt-3">
         <input type="email" id="email" class="form-control" placeholder="Enter Your Email ..." required>
         <button class="btn btn-primary" type="button" id="subscribeBtn">Subscribe</button>

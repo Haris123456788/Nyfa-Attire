@@ -150,29 +150,58 @@ body{
 #about{
     background-color: rgba(179, 179, 179, 0.05);
 }
-
 /* newsletter */
-#newsletter{
+#newsletter {
     background-color: rgba(179, 179, 179, 0.05);
 }
-#newsletter p{
+
+#newsletter p {
     max-width: 600px;
 }
-#newsletter .input-group{
-    max-width: 500px;
+
+/* Increase specificity to target the input group more directly */
+#newsletter .input-group {
+    width: 100%; /* Full width */
+    max-width: 500px; /* Maintain maximum width for larger screens */
+    margin: 0 auto; /* Center the input group */
 }
-#newsletter .form-control{
+
+/* Form control styling */
+#newsletter .form-control {
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
 }
-#newsletter .btn{
+
+/* Button styling */
+#newsletter .btn {
     background-color: var(--pink);
     color: #fff;
     border-color: var(--pink);
 }
-#newsletter .btn:hover{
+
+#newsletter .btn:hover {
     background-color: #000;
     border-color: #000;
+}
+
+/* Media queries */
+@media (min-width: 992px) { /* For larger screens like laptops/desktops */
+    #subscribeForm {
+        width: 45%; /* Set form width to 45% on larger screens */
+        margin: 0 auto; /* Center the form horizontally */
+    }
+}
+
+@media (max-width: 991px) { /* For tablets and smaller devices */
+    #subscribeForm {
+        width: 100%; /* Make the form 100% width on smaller screens */
+        margin: 0 auto; /* Center the form horizontally */
+    }
+
+    #newsletter .input-group {
+        width: 100%; /* Make the input group full-width on smaller screens */
+        max-width: 100%; /* Ensure it doesn't exceed 100% */
+    }
 }
 
 /* footer */
